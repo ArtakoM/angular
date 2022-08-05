@@ -1,0 +1,23 @@
+<div *ngIf="user" class="user-wrapper">
+  <div class="top">
+    <h2>{{ user.name }}</h2>
+    <span>{{ user.username }}</span>
+  </div>
+  <div class="contacts">
+    <div>
+      Website: <a target="_blank" href="http://{{ user.website }}">{{ user.website }}</a>
+    </div>
+    <div>
+      Tel: <a target="_blank" href="tel:{{ user.phone }}">{{ user.phone }}</a>
+    </div>
+    <div>
+      Email: <a target="_blank" href="mailto:{{ user.email }}">{{ user.email }}</a>
+    </div>
+  </div>
+  <div class="bottom" *ngIf="user.posts.length">
+    <span>
+      {{ user.posts.length }} posts total
+    </span>
+    <button (click)="handleUserSelect(user.id)">Read</button>
+  </div>
+</div>

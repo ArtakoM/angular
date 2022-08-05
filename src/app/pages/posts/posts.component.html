@@ -1,0 +1,6 @@
+<div *ngIf="this.stateService.selectedUser as user" class="posts">
+  <h1>Author: {{ user.name }}</h1>
+  <div class="posts-list">
+    <app-post *ngFor="let post of user.posts" [post]="post"></app-post>
+  </div>
+</div>

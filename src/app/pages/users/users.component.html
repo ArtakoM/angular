@@ -1,0 +1,8 @@
+<div *ngIf="this.stateService.combinedData" class="users-list">
+  <app-user
+    *ngFor="let user of this.stateService.combinedData"
+    [user]="user"
+    [handleUserSelect]="this.handleUserSelect"
+  >
+  </app-user>
+</div>
